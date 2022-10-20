@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Naslov</title>
+</head>
+<body onload="javascript:init()">
+    <script language="javascript">
+        function init()
+{
+    var k;
+
+    k= new Student("2355","Ime1","prezime1","treca","Racunarska tehnika","images/knjiga.gif");
+    k.render("glavnaKolona");
+    k= new Student("2356","Ime2","prezime2","treca","Racunarska tehnika","images/knjiga.gif");
+    k.render("glavnaKolona");
+    k= new Student("2357","Ime3","prezime3","treca","Racunarska tehnika","images/knjiga.gif");
+    k.render("glavnaKolona");
+}
+
+    </script>
+
+    <table cellspacing = "0" cellpadding ="0" id="glavni">
+        <tr id="glavniRed">
+            <td id="levaKolona">&nbsp;</td> <!--nbsp; (Prazan Prostor)-->
+            <td id="glavnaKolona">&nbsp;</td>
+            <td id="desnaKolona">&nbsp;</td>
+        </tr>
+
+    </table>
+</body>
+<script src="script.js">
+
+</script>
+</html>
