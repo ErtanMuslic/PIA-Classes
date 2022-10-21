@@ -19,43 +19,66 @@ class MenuItem{
         this.urlSlike=urlSlike;
         this.UrlSlike2=UrlSlike2;
     }
+    // ShowItems(){
+    //     var el = document.createElement("div");
+    //     el.style.width = "100%";
+    //     var t = "";
+    //     t+="<table border = 1 style='width:20%'; 'height:100%;'>"; 
+    //     t += "<tr style='vertical-align:top;'>";
+    //     t +="<td style='width:200px;'>";
+    //     // t +="Ime:" + this.naziv + "<br />";
+    //     t +="Url:" + this.url + "<br />";
+    //     t +="<img src='" + this.urlSlike + "'width=200px; height=300px;'/>";
+    //     t +="</td>";
+    //     t +="</tr>";
+    //     t +="</table>";
+    //     el.innerHTML = t;
+    //     document.body.appendChild(el);
+    // }
+ }
+
+class DynamicMenu{
+    constructor(id){
+        this.id=id;
+        this.MenuItems = [];
+    }
+    Add(Item){
+        this.MenuItems.push(Item);
+    }
+    ChangeOn(){
+        document.getElementById("PicID").src="Slika.jpg";
+    }
+
+    ChangeOff(){
+        document.getElementById("PicID").src="Slika.jpg";
+    }
     Show(){
         var el = document.createElement("div");
         el.style.width = "100%";
         var t = "";
         t+="<table border = 1 style='width:20%'; 'height:100%;'>"; 
+        for(let i = 0;i<this.MenuItems.length;i++){
         t += "<tr style='vertical-align:top;'>";
         t +="<td style='width:200px;'>";
-        t +="Ime:" + this.naziv + "<br />";
-        t +="Url:" + this.url + "<br />";
-        t +="<img src='" + this.urlSlike + "'width=200px; height=300px;'/>";
-        t +="<img src='" + this.urlSlike1 + "'width=200px; height=300px;'/>";
+        t +="Ime:" + this.MenuItems[i].naziv + "<br />";
+        t +="Url:" + this.MenuItems[i].url + "<br />";
+        t +="<img id='PicID' onmouseover=ChangeOn() src='" + this.MenuItems[i].urlSlike + "'width=200px; height=300px;/>";
         t +="</td>";
         t +="</tr>";
+        }
         t +="</table>";
         el.innerHTML = t;
         document.body.appendChild(el);
     }
 }
 
-class DynamicMenu{
-    
-}
 
-
-new1 = new MenuItem("asdsa","dasdas","sdasdsa.jpg","dsadsa,jpg");
-new1.Show();
-
-// novi = new Artikal(12,'Art1',"slika1","slika.jpg",550,120);
-// novi2 = new Artikal(12,'Art1',"slika1","slika.jpg",550,120);
-// novi3 = new Artikal(12,'Art1',"slika1","slika.jpg",550,120);
-// novi.validate();
-// novi2.validate();
-// novi3.validate();
-
-// v = new ListaArtikala('tabela');
-// v.dodaj(novi);
-// v.dodaj(novi2);
-// v.dodaj(novi3);
-// v.prikazi();
-// console.log(v);
+new1 = new MenuItem("asdsa","dasdas","download.jpg","Slika.jpg");
+new2 = new MenuItem("asdsa","dasdas","download.jpg","Slika.jpg");
+// new1.ShowItems();
+// new2.ShowItems();
+v = new DynamicMenu('Table');
+v.Add(new1);
+v.Add(new2);
+v.Show();
+console.log(v);
