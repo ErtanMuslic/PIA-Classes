@@ -79,6 +79,5 @@ new1 = new MenuItem("Ime1","Url1","download.jpg","Slika.jpg");
 new2 = new MenuItem("Ime2","Url2","download.jpg","Slika.jpg");
 v = new DynamicMenu('Table');
 v.Add(new1);
-v.Add(new2);
 v.Show();
 console.log(v);
