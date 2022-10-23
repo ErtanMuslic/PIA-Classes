@@ -19,22 +19,22 @@ class MenuItem{
         this.urlSlike=urlSlike;
         this.UrlSlike2=UrlSlike2;
     }
-    // ShowItems(){
-    //     var el = document.createElement("div");
-    //     el.style.width = "100%";
-    //     var t = "";
-    //     t+="<table border = 1 style='width:20%'; 'height:100%;'>"; 
-    //     t += "<tr style='vertical-align:top;'>";
-    //     t +="<td style='width:200px;'>";
-    //     // t +="Ime:" + this.naziv + "<br />";
-    //     t +="Url:" + this.url + "<br />";
-    //     t +="<img src='" + this.urlSlike + "'width=200px; height=300px;'/>";
-    //     t +="</td>";
-    //     t +="</tr>";
-    //     t +="</table>";
-    //     el.innerHTML = t;
-    //     document.body.appendChild(el);
-    // }
+    ShowItems(){
+        var el = document.createElement("div");
+        el.style.width = "100%";
+        var t = "";
+        t+="<table border = 1 style='width:20%'; 'height:100%;'>"; 
+        t += "<tr style='vertical-align:top;'>";
+        t +="<td style='width:200px;'>";
+        // t +="Ime:" + this.naziv + "<br />";
+        t +="Url:" + this.url + "<br />";
+        t +="<img src='" + this.urlSlike + "'width=200px; height=300px;'/>";
+        t +="</td>";
+        t +="</tr>";
+        t +="</table>";
+        el.innerHTML = t;
+        document.body.appendChild(el);
+    }
  }
 
 class DynamicMenu{
@@ -44,13 +44,6 @@ class DynamicMenu{
     }
     Add(Item){
         this.MenuItems.push(Item);
-    }
-    ChangeOn(){
-        document.getElementById("PicID").src="Slika.jpg";
-    }
-
-    ChangeOff(){
-        document.getElementById("PicID").src="Slika.jpg";
     }
     Show(){
         var el = document.createElement("div");
@@ -62,7 +55,7 @@ class DynamicMenu{
         t +="<td style='width:200px;'>";
         t +="Ime:" + this.MenuItems[i].naziv + "<br />";
         t +="Url:" + this.MenuItems[i].url + "<br />";
-        t +="<img id='PicID' onmouseover=ChangeOn() src='" + this.MenuItems[i].urlSlike + "'width=200px; height=300px;/>";
+        t +="<img onmouseover=ChangeOn() onmouseout=ChangeOff() src='" + this.MenuItems[i].urlSlike + "' alt ='nema' width=200px; height=300px;/>";
         t +="</td>";
         t +="</tr>";
         }
@@ -70,13 +63,20 @@ class DynamicMenu{
         el.innerHTML = t;
         document.body.appendChild(el);
     }
+   
+}
+
+function ChangeOn(){
+    document.getElementsByTagName("img")[0].src="Slika.jpg";
+ }
+
+ function ChangeOff(){
+    document.getElementsByTagName("img")[0].src="download.jpg";
 }
 
 
-new1 = new MenuItem("asdsa","dasdas","download.jpg","Slika.jpg");
-new2 = new MenuItem("asdsa","dasdas","download.jpg","Slika.jpg");
-// new1.ShowItems();
-// new2.ShowItems();
+new1 = new MenuItem("Ime1","Url1","download.jpg","Slika.jpg");
+new2 = new MenuItem("Ime2","Url2","download.jpg","Slika.jpg");
 v = new DynamicMenu('Table');
 v.Add(new1);
 v.Add(new2);
