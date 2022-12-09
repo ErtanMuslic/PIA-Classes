@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    gap: 16px;
+}
+
+.card{
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    width: 50vh;
+}
+
+.right{
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 22%;
+    width: 10vh;
+    height: 23vh;
+}
+
+#slika{
+    border: 1px solid black;
+}
+
+#znak{
+    cursor:pointer;
+}

@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    gap: 16px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 4%;
+}
+
+#slika{
+    width: 200px;
+    height: 200px;
+}
+
+#cena{
+    text-align: end
+}
